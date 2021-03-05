@@ -37,11 +37,11 @@ jobs:
           sudo -E apt-get clean
       - name: Download lede
         run: |
-          git clone https://github.com/janethan/lede
+          git clone https://github.com/coolsnowwolf/lede
           mv ./lede/* ./
-      #- name: Install addons
-        #run: |
-          #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
+      - name: Install addons
+        run: |
+          echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
           #cd package
           #mkdir openwrt-packages
           #cd openwrt-packages
