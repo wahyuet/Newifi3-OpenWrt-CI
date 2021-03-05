@@ -17,7 +17,7 @@ on:
     branches: 
       - master
   schedule:
-    - cron: 0 */12 * * *
+    - cron: 0 */12 * * 5
 
 jobs:
   build:
@@ -81,19 +81,19 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-ntfs=y
           
           # APP
-          CONFIG_PACKAGE_luci-app-aliddns=y
+          # CONFIG_PACKAGE_luci-app-aliddns=y
           CONFIG_PACKAGE_luci-app-aria2=y
           CONFIG_PACKAGE_luci-app-frpc=y
-          CONFIG_PACKAGE_luci-app-frps=y
+          # CONFIG_PACKAGE_luci-app-frps=y
           CONFIG_PACKAGE_luci-app-hd-idle=y
           # CONFIG_PACKAGE_luci-app-mwan3=y
           # CONFIG_PACKAGE_luci-app-mwan3helper=y
-          CONFIG_PACKAGE_luci-app-openvpn=y
-          CONFIG_PACKAGE_luci-app-openvpn-server=y
+          # CONFIG_PACKAGE_luci-app-openvpn=y
+          # CONFIG_PACKAGE_luci-app-openvpn-server=y
           CONFIG_PACKAGE_luci-app-samba=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
