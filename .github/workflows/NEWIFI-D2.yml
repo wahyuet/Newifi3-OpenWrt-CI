@@ -1,3 +1,4 @@
+
 #
 # This is free software, lisence use MIT.
 # 
@@ -39,9 +40,9 @@ jobs:
         run: |
           git clone https://github.com/janethan/lede
           mv ./lede/* ./
-      - name: Install addons
-        run: |
-          echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
+      #- name: Install addons
+        #run: |
+          #echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default 
           #cd package
           #mkdir openwrt-packages
           #cd openwrt-packages
@@ -52,7 +53,7 @@ jobs:
           ./scripts/feeds install -a
       - name: Costom configure file
         run: |
-          sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+          sed -i 's/luci-theme-bootstrap/luci-theme-bootstrap/g' feeds/luci/collections/luci/Makefile
           rm -f ./.config*
           touch ./.config
           cat >> .config <<EOF
@@ -60,14 +61,11 @@ jobs:
           CONFIG_TARGET_ramips=y
           CONFIG_TARGET_ramips_mt7621=y
           CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
-
           # Gzip
           CONFIG_TARGET_IMAGES_GZIP=y
-
           # IPv6
-          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          CONFIG_PACKAGE_ipv6helper=y
-
+          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=n
+          CONFIG_PACKAGE_ipv6helper=n
           # USB support
           ONFIG_PACKAGE_kmod-usb-core=y
           CONFIG_PACKAGE_kmod-usb3=y
@@ -81,29 +79,33 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-ntfs=y
           
           # APP
-          # CONFIG_PACKAGE_luci-app-aliddns=y
-          CONFIG_PACKAGE_luci-app-aria2=y
+          CONFIG_PACKAGE_luci-app-adbyby-plus=y
+          # CONFIG_PACKAGE_luci-app-aria2=y
           CONFIG_PACKAGE_luci-app-frpc=y
-          # CONFIG_PACKAGE_luci-app-frps=y
           CONFIG_PACKAGE_luci-app-hd-idle=y
+          # 多拔
           # CONFIG_PACKAGE_luci-app-mwan3=y
           # CONFIG_PACKAGE_luci-app-mwan3helper=y
+          # CONFIG_PACKAGE_luci-app-syncdial=y
+          #
           # CONFIG_PACKAGE_luci-app-openvpn=y
           # CONFIG_PACKAGE_luci-app-openvpn-server=y
+          CONFIG_PACKAGE_luci-app-rclone_INCLUDE_fuse-utils=n
+          CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=n
+          CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui=n
           CONFIG_PACKAGE_luci-app-samba=y
-          #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-          #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-          #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
-          #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          #CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
-          # CONFIG_PACKAGE_luci-app-syncdial=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
+          CONFIG_PACKAGE_luci-app-gost=y
           CONFIG_PACKAGE_luci-app-ttyd=y
           # CONFIG_PACKAGE_luci-app-usb-printer=y
-          #CONFIG_PACKAGE_luci-app-xlnetacc=y
-
+          # CONFIG_PACKAGE_luci-app-xlnetacc=y
           # Open source WIFI driver
           CONFIG_PACKAGE_kmod-mt7603=y
           CONFIG_PACKAGE_kmod-mt7603e=n
@@ -112,6 +114,28 @@ jobs:
           CONFIG_PACKAGE_hostapd-common=y
           CONFIG_PACKAGE_wpad-openssl=y
           CONFIG_PACKAGE_luci-app-mtwifi=n
+          CONFIG_PACKAGE_luci-app-advancedsetting=y
+          # CONFIG_PACKAGE_luci-app-jd-dailybonus=y
+          CONFIG_PACKAGE_luci-app-netdata=y
+          # CONFIG_PACKAGE_luci-app-openclash=y
+          #
+          CONFIG_PACKAGE_kmod-rtl8187=y
+          CONFIG_PACKAGE_kmod-rt73-usb=y
+          CONFIG_PACKAGE_kmod-rt2x00-usb=y
+          CONFIG_PACKAGE_kmod-rt2x00-lib=y
+          CONFIG_PACKAGE_kmod-rt2800-usb=y
+          CONFIG_PACKAGE_kmod-rt2800-lib=y
+          CONFIG_PACKAGE_luci-app-unblockmusic=n
+          CONFIG_PACKAGE_pixiewps=y
+          CONFIG_PACKAGE_reaver=y
+          CONFIG_PACKAGE_airmon-ng-y
+          # USPIP service
+          CONFIG_PACKAGE_kmod-usb-ohci=y
+          CONFIG_PACKAGE_usbip=y
+          CONFIG_PACKAGE_usbip-client=y
+          CONFIG_PACKAGE_usbip-server=y
+          CONFIG_PACKAGE_sshtunnel=y
+          CONFIG_V2RAY_EXCLUDE_V2CTL=y
           
           EOF
           
@@ -130,4 +154,4 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: OpenWrt-newifi-d2
-          path: bin/targets/ramips/mt7621/openwrt-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin
+          path: bin/targets/ramips/mt7621/*in*
