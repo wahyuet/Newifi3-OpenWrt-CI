@@ -128,7 +128,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-unblockmusic=n
           CONFIG_PACKAGE_pixiewps=y
           CONFIG_PACKAGE_reaver=y
-          CONFIG_PACKAGE_airmon-ng=y
+          #CONFIG_PACKAGE_airmon-ng=y
           # USPIP service
           CONFIG_PACKAGE_kmod-usb-ohci=y
           CONFIG_PACKAGE_usbip=y
