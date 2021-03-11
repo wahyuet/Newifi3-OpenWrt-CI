@@ -98,7 +98,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y
-          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
@@ -128,7 +128,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-unblockmusic=n
           CONFIG_PACKAGE_pixiewps=y
           CONFIG_PACKAGE_reaver=y
-          CONFIG_PACKAGE_airmon-ng=y
+          #CONFIG_PACKAGE_airmon-ng=y
           # USPIP service
           CONFIG_PACKAGE_kmod-usb-ohci=y
           CONFIG_PACKAGE_usbip=y
