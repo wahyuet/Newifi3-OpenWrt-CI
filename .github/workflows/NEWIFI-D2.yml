@@ -1,4 +1,3 @@
-
 #
 # This is free software, lisence use MIT.
 # 
@@ -96,9 +95,11 @@ jobs:
           CONFIG_PACKAGE_luci-app-samba=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray_plugin=y
@@ -117,7 +118,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-advancedsetting=y
           # CONFIG_PACKAGE_luci-app-jd-dailybonus=y
           CONFIG_PACKAGE_luci-app-netdata=y
-          # CONFIG_PACKAGE_luci-app-openclash=y
           #
           CONFIG_PACKAGE_kmod-rtl8187=y
           CONFIG_PACKAGE_kmod-rt73-usb=y
@@ -128,14 +128,13 @@ jobs:
           CONFIG_PACKAGE_luci-app-unblockmusic=n
           CONFIG_PACKAGE_pixiewps=y
           CONFIG_PACKAGE_reaver=y
-          CONFIG_PACKAGE_airmon-ng-y
+          CONFIG_PACKAGE_airmon-ng=y
           # USPIP service
           CONFIG_PACKAGE_kmod-usb-ohci=y
           CONFIG_PACKAGE_usbip=y
           CONFIG_PACKAGE_usbip-client=y
           CONFIG_PACKAGE_usbip-server=y
           CONFIG_PACKAGE_sshtunnel=y
-          CONFIG_V2RAY_EXCLUDE_V2CTL=y
           
           EOF
           
@@ -155,3 +154,4 @@ jobs:
         with:
           name: OpenWrt-newifi-d2
           path: bin/targets/ramips/mt7621/*in*
+          # path: bin/targets/ramips/mt7621/openwrt-ramips-mt7621-d-team_newifi-d2-squashfs-sysupgrade.bin
