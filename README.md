@@ -1,6 +1,6 @@
 # 新路由3（Newifi-D2）自动编译最新版OpenWrt（Lede）
 
-*每12小时自动编译一次，在Action中下载*
+*每周的星期五自动编译一次，在Action中下载*
 
 ## 编译特性
 - 默认主题为argon
@@ -30,7 +30,7 @@
 # CONFIG_PACKAGE_luci-app-syncdial=y
 ```
 ## 网关地址
-- IP 192.168.1.1
+- IP 192.168.10.1
 - Username root
 - Password password
 
