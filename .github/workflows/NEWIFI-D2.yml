@@ -18,6 +18,8 @@ on:
       - master
   schedule:
     - cron: 0 */12 * * 5
+  watch:
+    types: started
 
 jobs:
   build:
@@ -103,6 +105,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray_plugin=y
+          CONFIG_PACKAGE_xray-geodata=y
           CONFIG_PACKAGE_luci-app-gost=y
           CONFIG_PACKAGE_luci-app-ttyd=y
           # CONFIG_PACKAGE_luci-app-usb-printer=y
