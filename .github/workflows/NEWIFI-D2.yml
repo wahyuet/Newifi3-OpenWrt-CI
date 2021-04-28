@@ -103,8 +103,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray_plugin=y
           CONFIG_PACKAGE_xray-geodata=y
           CONFIG_PACKAGE_luci-app-gost=y
           CONFIG_PACKAGE_luci-app-ttyd=y
